@@ -34,9 +34,14 @@ def sarcasm_bot(sentence):
     return complete[0]
 
 
-if sys.argv[1]:
-    print(sarcasm_bot(sys.argv[1]))
-    print('Copied to Clipboard')
-else:
-    print(sarcasm_bot(input("Enter sentence: ")))
-    print('Copied to Clipboard')
+if __name__ == "__main__":
+    try:
+        if sys.argv[1]:
+            print(sarcasm_bot(sys.argv[1]))
+            print('Copied to Clipboard')
+        else:
+            print(sarcasm_bot(input("Enter sentence: ")))
+            print('Copied to Clipboard')
+    except IndexError:
+        print(sarcasm_bot(input("Enter sentence: ")))
+        print('Copied to Clipboard')
